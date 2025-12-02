@@ -35,7 +35,7 @@ a{
 .logo{
     font-size: 30px;
     color: #7cf03d;
-    margin-top: px;
+    margin-top: 0;
 }
 .navbar ul{
     display: flex;
@@ -67,11 +67,6 @@ a{
     margin-left: 30px;
     margin-top: 30px;
 }
-h1 {
-    color: white;
-    margin: 20px 0;
-}
-
 .home-info h1 {
 font-size: 25px;
 }
@@ -360,7 +355,7 @@ font-size: 25px;
     color: #333;
     font-size: 20px;
     cursor: pointer;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 999;
@@ -385,6 +380,7 @@ font-size: 25px;
     padding: 5px;
     z-index: 1001;
     gap: 5px;
+    margin-right: 15px;
 }
 
 .menu-toggle span {
@@ -408,25 +404,471 @@ font-size: 25px;
 }
 
 
+/* Remove zoom on mobile and tablet */
+@media (max-width: 1024px) {
+    body {
+        zoom: 1;
+    }
+}
+
+/* ============================================
+   TABLET STYLES (601px - 1024px)
+   ============================================ */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        zoom: 1;
+        font-size: 16px;
+    }
+
+    .navbar {
+        padding: 12px 20px;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    .navbar ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    .navbar ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(124, 240, 61, 0.1);
+    }
+
+    .navbar ul li:last-child {
+        border-bottom: none;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        display: block;
+        padding: 10px;
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 100px 20px 40px;
+        margin-left: 0;
+        margin-top: 0;
+        gap: 30px;
+    }
+
+    .home-img {
+        order: -1;
+    }
+
+    .home-info {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 600px;
+    }
+
+    .home-info h1 {
+        font-size: 32px;
+    }
+
+    .home-info h2 {
+        font-size: 24px;
+    }
+
+    .home-info p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .home-img .img-box {
+        width: 180px;
+        height: 180px;
+    }
+
+    .btnb {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .service-item {
+        padding: 25px 20px;
+    }
+
+    .contact-links {
+        gap: 20px;
+    }
+
+    .scroll-to-top-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   PHONE STYLES (up to 600px)
+   ============================================ */
 @media (max-width: 600px) {
+    body {
+        zoom: 1;
+    }
+
     .parent {
-      flex-direction: column;
-      width: 100%;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Navbar Mobile Styles */
+    .navbar {
+        padding: 10px 15px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        min-height: 50px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    .navbar ul {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+
+    .navbar ul.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(124, 240, 61, 0.1);
+    }
+
+    .navbar ul li:last-child {
+        border-bottom: none;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        display: block;
+        padding: 10px;
+    }
+
+    /* Home Section Mobile */
+    .home {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 80px 15px 30px;
+        margin-left: 0;
+        margin-top: 0;
+        gap: 25px;
+    }
+
+    .home-img {
+        order: -1;
+    }
+
+    .home-info {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .home-info h1 {
+        font-size: 24px;
+    }
+
+    .home-info h2 {
+        font-size: 18px;
+        margin-top: 8px;
+    }
+
+    .home-info p {
+        font-size: 14px;
+        margin: 12px 0 20px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .home-img .img-box {
+        width: 150px;
+        height: 150px;
+        border-width: 3px;
+    }
+
+    .btnb {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 13px;
+        width: auto;
+        display: inline-block;
+    }
+
+    .sci {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    /* Section Styles Mobile */
+    .section {
+        padding: 50px 15px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    /* Services Grid Mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .service-item {
+        padding: 20px 15px;
+    }
+
+    .service-item i {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .service-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        font-size: 13px;
+    }
+
+    /* About Section Mobile */
+    .about-content {
+        padding: 0 10px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Contact Section Mobile */
+    .contact-content > p {
+        font-size: 14px;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .contact-item {
+        min-width: auto;
+        width: 100%;
+        padding: 18px 20px;
+    }
+
+    .contact-item i {
+        font-size: 28px;
+    }
+
+    .contact-item span {
+        font-size: 13px;
+    }
+
+    /* Scroll to Top Button Mobile */
+    .scroll-to-top-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 16px;
     }
 }
-@media (min-width: 601px) and (max-width: 768px) {
-    body {
-       font-size: 16px;
-    }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-    body {
-       font-size: 18px;
-    }
-}
+
+/* ============================================
+   DESKTOP STYLES (1025px and above)
+   Keep original desktop layout unchanged
+   ============================================ */
 @media (min-width: 1025px) {
     body {
-       font-size: 20px;
+        zoom: 2;
+        font-size: 20px;
+    }
+
+    /* Hide mobile menu toggle on desktop - completely invisible and takes no space */
+    .menu-toggle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        position: absolute !important;
+        pointer-events: none !important;
+    }
+    
+    /* Hide menu toggle spans on desktop */
+    .menu-toggle span {
+        display: none !important;
+    }
+
+    /* Ensure navbar menu is visible on desktop */
+    .navbar ul {
+        display: flex !important;
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        width: auto !important;
+        flex-direction: row !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    .navbar ul li {
+        margin-left: 30px !important;
+        width: auto !important;
+        padding: 0 !important;
+        border-bottom: none !important;
+    }
+
+    .navbar ul li a {
+        font-size: 15px !important;
+        display: inline-block !important;
+        padding: 0 !important;
+    }
+
+    /* Desktop home layout: info left, image right */
+    .home {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px 20px 20px 20px;
+        margin-left: 30px;
+        margin-top: 30px;
+        text-align: left;
+    }
+
+    .home-img {
+        order: 2;
+    }
+
+    .home-info {
+        order: 1;
+        text-align: left;
     }
 }
 
